@@ -1,0 +1,77 @@
+{
+    "identityVerificationBundle":{
+        "identityEvidence":[
+            {
+                "type": "UK_PASSPORT", // the type determines the schema of the evidence data. Possibly different type depending on the checking method.
+                "evidenceData":{  // do we need this in the GPG45 Engine? Used for cross referencing the data?
+                    "passportNumber": "",
+                    "title": "",
+                    "surname": "",
+                    "forenames": "",
+                    "nationality": "",
+                    "dateOfBirth": "",
+                    "gender": "",
+                    "placeOfBirth": "",
+                    "countryOfBirth": "",
+                    "dateOfIssue": "",
+                    "dateOfExpiry": "",
+                    "issuingOfficeName": ""
+                },
+                "validityChecks":{ // The validity checks need to establish that the evidence is valid. What is tracked here?
+                    "original": "",
+                    "errors": "",
+                    "details": "",
+                    "logos": "",
+                    "consistent": "",
+                    "authoritativeSource": "", // dcs check
+                    "visibleSecurityFeatures": "",
+                    "specialistLightSecurityFeatures": "",
+                    "physicalSecurityFeatures": "",
+                    "cryptographicCheck": "",
+                    "lostStolenCanceled": "",
+                    "expired": ""
+                }
+            }
+        ],
+
+        "activityChecks":[ // What does this look like?
+            {
+                "source": {  // Data about the check.
+                    "type": "", // ???
+                    "identityCheck": "None|PublishedPolicy|AntiMoneyLaundering|PhysicalBiometric"
+                }, 
+                "dates": ["", ""] // Date of interaction. Need to have a pattern of interaction.
+                
+            }
+
+        ],
+
+        "fraudCheck":{
+            "level": "1", // The fraud check level
+            "fraudIndicators": []  // Should contain some data for the result of the fraud check. Need to be able to use this to determine if the identity verification is strong enough.
+        },
+
+        "identityVerification":{
+
+            "staticKBV":[ // Data about the static KBV that was done. Need to be able to use this to build a score for the verification.
+                {
+                    "quality": "Low|Medium|High",
+                    "": "" //?????
+                }
+            ],
+
+            "photoMatch": "",
+            "biometricMatch": "",
+            "dynamicKBV": [
+                {
+                    "quality": "Low|Medium|High",
+                    "": "" //?????
+                }
+            ]
+
+
+
+        }
+
+    }
+}
