@@ -1,0 +1,28 @@
+{
+    "name": "V3A",
+    "description": "Very high confidence, 3 pieces of evidence, profile A (V3A)",
+    "confidence": "VeryHigh",
+    "evidenceScores": [
+        {
+            "strength": 3,
+            "validity": 3,
+            "activityHistory": 3,
+            "identityFraud": 3,
+            "verification": 3
+        },
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 0
+        },
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 0
+        }
+    ]
+}

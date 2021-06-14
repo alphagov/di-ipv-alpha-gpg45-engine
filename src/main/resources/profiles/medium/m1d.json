@@ -1,0 +1,14 @@
+{
+    "name": "M1D",
+    "description": "Medium confidence, 1 piece of evidence, profile D (M1D)",
+    "confidence": "Medium",
+    "evidenceScores": [
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 2,
+            "identityFraud": 1,
+            "verification": 3
+        }
+    ]
+}

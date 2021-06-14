@@ -1,0 +1,14 @@
+{
+    "name": "H1C",
+    "description": "High confidence, 1 piece of evidence, profile C (H1C)",
+    "confidence": "High",
+    "evidenceScores": [
+        {
+            "strength": 4,
+            "validity": 3,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 4
+        }
+    ]
+}

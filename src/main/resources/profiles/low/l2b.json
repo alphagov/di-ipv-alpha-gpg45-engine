@@ -1,0 +1,21 @@
+{
+    "name": "L2B",
+    "description": "Low confidence, 2 pieces of evidence, profile B (L2B)",
+    "confidence": "Low",
+    "evidenceScores": [
+        {
+            "strength": 1,
+            "validity": 1,
+            "activityHistory": 2,
+            "identityFraud": 2,
+            "verification": 1
+        },
+        {
+            "strength": 1,
+            "validity": 1,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 0
+        }
+    ]
+}

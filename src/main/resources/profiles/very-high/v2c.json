@@ -1,0 +1,21 @@
+{
+    "name": "V2C",
+    "description": "Very high confidence, 2 pieces of evidence, profile C (V2C)",
+    "confidence": "VeryHigh",
+    "evidenceScores": [
+        {
+            "strength": 4,
+            "validity": 3,
+            "activityHistory": 2,
+            "identityFraud": 2,
+            "verification": 3
+        },
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 0
+        }
+    ]
+}

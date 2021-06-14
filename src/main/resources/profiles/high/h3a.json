@@ -1,0 +1,28 @@
+{
+    "name": "H3A",
+    "description": "High confidence, 3 pieces of evidence, profile A (H3A)",
+    "confidence": "High",
+    "evidenceScores": [
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 2,
+            "identityFraud": 2,
+            "verification": 3
+        },
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 0
+        },
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 0
+        }
+    ]
+}

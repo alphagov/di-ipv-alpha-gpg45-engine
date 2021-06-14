@@ -1,0 +1,21 @@
+{
+    "name": "H2A",
+    "description": "High confidence, 2 pieces of evidence, profile A (H2A)",
+    "confidence": "High",
+    "evidenceScores": [
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 3,
+            "identityFraud": 2,
+            "verification": 3
+        },
+        {
+            "strength": 2,
+            "validity": 2,
+            "activityHistory": 0,
+            "identityFraud": 0,
+            "verification": 0
+        }
+    ]
+}
