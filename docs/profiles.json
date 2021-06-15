@@ -1,7 +1,7 @@
 {
   "profiles": [
     {
-      "code": "V3A",
+      "name": "V3A",
       "evidence": [
         {
           "strength": 3,
@@ -21,7 +21,7 @@
       "verification": 3
     },
     {
-      "code": "V2D",
+      "name": "V2D",
       "evidence": [
         {
           "strength": 4,
@@ -37,7 +37,7 @@
       "verification": 3
     },
     {
-      "code": "V2C",
+      "name": "V2C",
       "evidence": [
         {
           "strength": 4,
@@ -53,7 +53,7 @@
       "verification": 3
     },
     {
-      "code": "V2B",
+      "name": "V2B",
       "evidence": [
         {
           "strength": 4,
@@ -69,7 +69,7 @@
       "verification": 3
     },
     {
-      "code": "H3A",
+      "name": "H3A",
       "evidence": [
         {
           "strength": 2,
@@ -89,7 +89,7 @@
       "verification": 3
     },
     {
-      "code": "H2E",
+      "name": "H2E",
       "evidence": [
         {
           "strength": 4,
@@ -105,7 +105,7 @@
       "verification": 3
     },
     {
-      "code": "H2D",
+      "name": "H2D",
       "evidence": [
         {
           "strength": 3,
@@ -121,7 +121,7 @@
       "verification": 3
     },
     {
-      "code": "H2C",
+      "name": "H2C",
       "evidence": [
         {
           "strength": 3,
@@ -137,7 +137,7 @@
       "verification": 3
     },
     {
-      "code": "H2B",
+      "name": "H2B",
       "evidence": [
         {
           "strength": 4,
@@ -153,7 +153,7 @@
       "verification": 3
     },
     {
-      "code": "H2A",
+      "name": "H2A",
       "evidence": [
         {
           "strength": 2,
@@ -169,7 +169,7 @@
       "verification": 3
     },
     {
-      "code": "H1C",
+      "name": "H1C",
       "evidence": [
         {
           "strength": 4,
@@ -181,7 +181,7 @@
       "verification": 4
     },
     {
-      "code": "H1B",
+      "name": "H1B",
       "evidence": [
         {
           "strength": 3,
@@ -193,7 +193,7 @@
       "verification": 3
     },
     {
-      "code": "H1A",
+      "name": "H1A",
       "evidence": [
         {
           "strength": 4,
@@ -205,7 +205,7 @@
       "verification": 3
     },
     {
-      "code": "M3A",
+      "name": "M3A",
       "evidence": [
         {
           "strength": 2,
@@ -225,7 +225,7 @@
       "verification": 3
     },
     {
-      "code": "M2C",
+      "name": "M2C",
       "evidence": [
         {
           "strength": 3,
@@ -241,7 +241,7 @@
       "verification": 3
     },
     {
-      "code": "M2B",
+      "name": "M2B",
       "evidence": [
         {
           "strength": 3,
@@ -257,7 +257,7 @@
       "verification": 2
     },
     {
-      "code": "M2A",
+      "name": "M2A",
       "evidence": [
         {
           "strength": 2,
@@ -273,7 +273,7 @@
       "verification": 2
     },
     {
-      "code": "M1D",
+      "name": "M1D",
       "evidence": [
         {
           "strength": 2,
@@ -285,7 +285,7 @@
       "verification": 3
     },
     {
-      "code": "M1C",
+      "name": "M1C",
       "evidence": [
         {
           "strength": 3,
@@ -297,7 +297,7 @@
       "verification": 3
     },
     {
-      "code": "M1B",
+      "name": "M1B",
       "evidence": [
         {
           "strength": 3,
@@ -309,7 +309,7 @@
       "verification": 2
     },
     {
-      "code": "M1A",
+      "name": "M1A",
       "evidence": [
         {
           "strength": 4,
@@ -321,7 +321,7 @@
       "verification": 1
     },
     {
-      "code": "V2C",
+      "name": "V2C",
       "evidence": [
         {
           "strength": 4,
@@ -337,7 +337,7 @@
       "verification": 3
     },
     {
-      "code": "V2B",
+      "name": "V2B",
       "evidence": [
         {
           "strength": 4,
@@ -353,7 +353,7 @@
       "verification": 3
     },
     {
-      "code": "V2A",
+      "name": "V2A",
       "evidence": [
         {
           "strength": 3,
@@ -369,7 +369,7 @@
       "verification": 3
     },
     {
-      "code": "L3A",
+      "name": "L3A",
       "evidence": [
         {
           "strength": 1,
@@ -389,7 +389,7 @@
       "verification": 1
     },
     {
-      "code": "L2B",
+      "name": "L2B",
       "evidence": [
         {
           "strength": 1,
@@ -405,7 +405,7 @@
       "verification": 1
     },
     {
-      "code": "L2A",
+      "name": "L2A",
       "evidence": [
         {
           "strength": 1,
@@ -421,7 +421,7 @@
       "verification": 2
     },
     {
-      "code": "L1C",
+      "name": "L1C",
       "evidence": [
         {
           "strength": 1,
@@ -433,7 +433,7 @@
       "verification": 2
     },
     {
-      "code": "L1B",
+      "name": "L1B",
       "evidence": [
         {
           "strength": 3,
@@ -445,7 +445,7 @@
       "verification": 1
     },
     {
-      "code": "L1A",
+      "name": "L1A",
       "evidence": [
         {
           "strength": 2,
