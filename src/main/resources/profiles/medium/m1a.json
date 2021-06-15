@@ -1,14 +1,14 @@
 {
-    "name": "M1A",
-    "description": "Medium confidence, 1 piece of evidence, profile A (M1A)",
-    "confidence": "Medium",
-    "evidenceScores": [
-        {
-            "strength": 4,
-            "validity": 2,
-            "activityHistory": 0,
-            "identityFraud": 1,
-            "verification": 2
-        }
-    ]
+  "name": "M1A",
+  "description": "Medium confidence, 1 piece of evidence, profile A (M1A)",
+  "confidence": "Medium",
+  "evidenceScores": [
+    {
+      "strength": 4,
+      "validity": 2
+    }
+  ],
+  "activityHistory": 0,
+  "identityFraud": 1,
+  "verification": 2
 }
