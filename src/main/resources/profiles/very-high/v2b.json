@@ -1,21 +1,18 @@
 {
-    "name": "V2B",
-    "description": "Very high confidence, 2 pieces of evidence, profile B (V2B)",
-    "confidence": "VeryHigh",
-    "evidenceScores": [
-        {
-            "strength": 4,
-            "validity": 3,
-            "activityHistory": 0,
-            "identityFraud": 2,
-            "verification": 3
-        },
-        {
-            "strength": 3,
-            "validity": 3,
-            "activityHistory": 0,
-            "identityFraud": 0,
-            "verification": 0
-        }
-    ]
+  "name": "V2B",
+  "description": "Very high confidence, 2 pieces of evidence, profile B (V2B)",
+  "confidence": "VeryHigh",
+  "evidenceScores": [
+    {
+      "strength": 4,
+      "validity": 3
+    },
+    {
+      "strength": 3,
+      "validity": 3
+    }
+  ],
+  "activityHistory": 0,
+  "identityFraud": 2,
+  "verification": 3
 }
