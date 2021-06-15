@@ -18,7 +18,9 @@
       ],
       "activityHistory": 3,
       "identityFraud": 3,
-      "verification": 3
+      "verification": 3,
+      "confidence": "VeryHigh",
+      "description": "Very high confidence, 1 piece of evidence, profile A (V3A)"
     },
     {
       "name": "V2D",
@@ -34,7 +36,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 0,
-      "verification": 3
+      "verification": 3,
+      "confidence": "VeryHigh",
+      "description": "Very high confidence, 1 piece of evidence, profile D (V2D)"
     },
     {
       "name": "V2C",
@@ -50,7 +54,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "VeryHigh",
+      "description": "Very high confidence, 1 piece of evidence, profile C (V2C)"
     },
     {
       "name": "V2B",
@@ -66,7 +72,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "VeryHigh",
+      "description": "Very high confidence, 1 piece of evidence, profile B (V2B)"
     },
     {
       "name": "H3A",
@@ -86,7 +94,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile A (H3A)"
     },
     {
       "name": "H2E",
@@ -102,7 +112,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 0,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile E (H2E)"
     },
     {
       "name": "H2D",
@@ -118,7 +130,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 1,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile D (H2D)"
     },
     {
       "name": "H2C",
@@ -134,7 +148,9 @@
       ],
       "activityHistory": 1,
       "identityFraud": 1,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile C (H2C)"
     },
     {
       "name": "H2B",
@@ -150,7 +166,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile B (H2B)"
     },
     {
       "name": "H2A",
@@ -166,7 +184,9 @@
       ],
       "activityHistory": 3,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile A (H2A)"
     },
     {
       "name": "H1C",
@@ -178,7 +198,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 0,
-      "verification": 4
+      "verification": 4,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile C (H1C)"
     },
     {
       "name": "H1B",
@@ -190,7 +212,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 1,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile B (H1B)"
     },
     {
       "name": "H1A",
@@ -202,7 +226,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 1,
-      "verification": 3
+      "verification": 3,
+      "confidence": "High",
+      "description": "High confidence, 1 piece of evidence, profile A (H1A)"
     },
     {
       "name": "M3A",
@@ -222,7 +248,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile A (M3A)"
     },
     {
       "name": "M2C",
@@ -238,7 +266,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 1,
-      "verification": 3
+      "verification": 3,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile C (M2C)"
     },
     {
       "name": "M2B",
@@ -254,7 +284,9 @@
       ],
       "activityHistory": 1,
       "identityFraud": 1,
-      "verification": 2
+      "verification": 2,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile B (M2B)"
     },
     {
       "name": "M2A",
@@ -270,7 +302,9 @@
       ],
       "activityHistory": 3,
       "identityFraud": 2,
-      "verification": 2
+      "verification": 2,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile A (M2A)"
     },
     {
       "name": "M1D",
@@ -282,7 +316,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 1,
-      "verification": 3
+      "verification": 3,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile D (M1D)"
     },
     {
       "name": "M1C",
@@ -294,7 +330,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 0,
-      "verification": 3
+      "verification": 3,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile C (M1C)"
     },
     {
       "name": "M1B",
@@ -306,7 +344,9 @@
       ],
       "activityHistory": 1,
       "identityFraud": 2,
-      "verification": 2
+      "verification": 2,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile B (M1B)"
     },
     {
       "name": "M1A",
@@ -318,7 +358,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 1,
-      "verification": 1
+      "verification": 1,
+      "confidence": "Medium",
+      "description": "Medium confidence, 1 piece of evidence, profile A (M1A)"
     },
     {
       "name": "V2C",
@@ -334,7 +376,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "VeryHigh",
+      "description": "Very high confidence, 1 piece of evidence, profile C (V2C)"
     },
     {
       "name": "V2B",
@@ -350,7 +394,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "VeryHigh",
+      "description": "Very high confidence, 1 piece of evidence, profile B (V2B)"
     },
     {
       "name": "V2A",
@@ -366,7 +412,9 @@
       ],
       "activityHistory": 3,
       "identityFraud": 2,
-      "verification": 3
+      "verification": 3,
+      "confidence": "VeryHigh",
+      "description": "Very high confidence, 1 piece of evidence, profile A (V2A)"
     },
     {
       "name": "L3A",
@@ -386,7 +434,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 1,
-      "verification": 1
+      "verification": 1,
+      "confidence": "Low",
+      "description": "Low confidence, 1 piece of evidence, profile A (L3A)"
     },
     {
       "name": "L2B",
@@ -402,7 +452,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 2,
-      "verification": 1
+      "verification": 1,
+      "confidence": "Low",
+      "description": "Low confidence, 1 piece of evidence, profile B (L2B)"
     },
     {
       "name": "L2A",
@@ -418,7 +470,9 @@
       ],
       "activityHistory": 2,
       "identityFraud": 1,
-      "verification": 2
+      "verification": 2,
+      "confidence": "Low",
+      "description": "Low confidence, 1 piece of evidence, profile A (L2A)"
     },
     {
       "name": "L1C",
@@ -430,7 +484,9 @@
       ],
       "activityHistory": 3,
       "identityFraud": 2,
-      "verification": 2
+      "verification": 2,
+      "confidence": "Low",
+      "description": "Low confidence, 1 piece of evidence, profile C (L1C)"
     },
     {
       "name": "L1B",
@@ -442,7 +498,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 0,
-      "verification": 1
+      "verification": 1,
+      "confidence": "Low",
+      "description": "Low confidence, 1 piece of evidence, profile B (L1B)"
     },
     {
       "name": "L1A",
@@ -454,7 +512,9 @@
       ],
       "activityHistory": 0,
       "identityFraud": 1,
-      "verification": 1
+      "verification": 1,
+      "confidence": "Low",
+      "description": "Low confidence, 1 piece of evidence, profile A (L1A)"
     }
   ]
 }
