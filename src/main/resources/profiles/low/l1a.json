@@ -1,14 +1,14 @@
 {
-    "name": "L1A",
-    "description": "Low confidence, 1 piece of evidence, profile A (L1A)",
-    "confidence": "Low",
-    "evidenceScores": [
-        {
-            "strength": 2,
-            "validity": 2,
-            "activityHistory": 0,
-            "identityFraud": 1,
-            "verification": 1
-        }
-    ]
+  "name": "L1A",
+  "description": "Low confidence, 1 piece of evidence, profile A (L1A)",
+  "confidence": "Low",
+  "evidenceScores": [
+    {
+      "strength": 2,
+      "validity": 2
+    }
+  ],
+  "activityHistory": 0,
+  "identityFraud": 1,
+  "verification": 1
 }

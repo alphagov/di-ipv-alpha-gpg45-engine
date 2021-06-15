@@ -1,28 +1,22 @@
 {
-    "name": "L3A",
-    "description": "Low confidence, 3 pieces of evidence, profile A (L3A)",
-    "confidence": "Low",
-    "evidenceScores": [
-        {
-            "strength": 1,
-            "validity": 1,
-            "activityHistory": 2,
-            "identityFraud": 1,
-            "verification": 1
-        },
-        {
-            "strength": 1,
-            "validity": 1,
-            "activityHistory": 0,
-            "identityFraud": 0,
-            "verification": 0
-        },
-        {
-            "strength": 1,
-            "validity": 1,
-            "activityHistory": 0,
-            "identityFraud": 0,
-            "verification": 0
-        }
-    ]
+  "name": "L3A",
+  "description": "Low confidence, 3 pieces of evidence, profile A (L3A)",
+  "confidence": "Low",
+  "evidenceScores": [
+    {
+      "strength": 1,
+      "validity": 1
+    },
+    {
+      "strength": 1,
+      "validity": 1
+    },
+    {
+      "strength": 1,
+      "validity": 1
+    }
+  ],
+  "activityHistory": 2,
+  "identityFraud": 1,
+  "verification": 1
 }
