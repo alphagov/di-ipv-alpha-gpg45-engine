@@ -16,4 +16,8 @@ public class IdentityProfile {
 
     @SerializedName("evidenceScores")
     private EvidenceScore[] evidenceScoreCriteria;
+
+    private Score activityHistory = Score.NOT_AVAILABLE;
+    private Score identityFraud = Score.NOT_AVAILABLE;
+    private Score verification = Score.NOT_AVAILABLE;
 }

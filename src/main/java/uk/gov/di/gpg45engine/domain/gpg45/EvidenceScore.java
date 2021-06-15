@@ -14,13 +14,4 @@ public class EvidenceScore {
 
     @Builder.Default
     private Score validity = Score.NOT_AVAILABLE;
-
-    @Builder.Default
-    private Score activityHistory = Score.NOT_AVAILABLE;
-
-    @Builder.Default
-    private Score identityFraud = Score.NOT_AVAILABLE;
-
-    @Builder.Default
-    private Score verification = Score.NOT_AVAILABLE;
 }

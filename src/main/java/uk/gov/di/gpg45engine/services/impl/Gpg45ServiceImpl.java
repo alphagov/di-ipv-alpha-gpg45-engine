@@ -6,7 +6,6 @@ import uk.gov.di.gpg45engine.domain.data.IdentityEvidence;
 import uk.gov.di.gpg45engine.domain.data.IdentityVerificationBundle;
 import uk.gov.di.gpg45engine.domain.gpg45.EvidenceScore;
 import uk.gov.di.gpg45engine.domain.gpg45.IdentityProfile;
-import uk.gov.di.gpg45engine.domain.gpg45.Score;
 import uk.gov.di.gpg45engine.services.Gpg45Service;
 import uk.gov.di.gpg45engine.services.IdentityEvidenceService;
 import uk.gov.di.gpg45engine.services.ProfileMatchingService;
@@ -44,9 +43,6 @@ public class Gpg45ServiceImpl implements Gpg45Service {
             var evidenceScore = EvidenceScore.builder()
                 .strength(strength)
                 .validity(validity)
-                .activityHistory(Score.NOT_AVAILABLE)
-                .identityFraud(Score.NOT_AVAILABLE)
-                .verification(Score.NOT_AVAILABLE)
                 .build();
 
             validityScoreMap.put(evidence, evidenceScore);

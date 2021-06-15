@@ -1,21 +1,18 @@
 {
-    "name": "M2A",
-    "description": "Medium confidence, 2 pieces of evidence, profile A (M2A)",
-    "confidence": "Medium",
-    "evidenceScores": [
-        {
-            "strength": 2,
-            "validity": 2,
-            "activityHistory": 3,
-            "identityFraud": 2,
-            "verification": 2
-        },
-        {
-            "strength": 2,
-            "validity": 2,
-            "activityHistory": 0,
-            "identityFraud": 0,
-            "verification": 0
-        }
-    ]
+  "name": "M2A",
+  "description": "Medium confidence, 2 pieces of evidence, profile A (M2A)",
+  "confidence": "Medium",
+  "evidenceScores": [
+    {
+      "strength": 2,
+      "validity": 2
+    },
+    {
+      "strength": 2,
+      "validity": 2
+    }
+  ],
+  "activityHistory": 3,
+  "identityFraud": 2,
+  "verification": 2
 }

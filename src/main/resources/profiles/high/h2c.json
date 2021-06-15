@@ -1,21 +1,18 @@
 {
-    "name": "H2C",
-    "description": "High confidence, 2 pieces of evidence, profile C (H2C)",
-    "confidence": "High",
-    "evidenceScores": [
-        {
-            "strength": 3,
-            "validity": 3,
-            "activityHistory": 1,
-            "identityFraud": 1,
-            "verification": 3
-        },
-        {
-            "strength": 2,
-            "validity": 2,
-            "activityHistory": 0,
-            "identityFraud": 0,
-            "verification": 0
-        }
-    ]
+  "name": "H2C",
+  "description": "High confidence, 2 pieces of evidence, profile C (H2C)",
+  "confidence": "High",
+  "evidenceScores": [
+    {
+      "strength": 3,
+      "validity": 3
+    },
+    {
+      "strength": 2,
+      "validity": 2
+    }
+  ],
+  "activityHistory": 1,
+  "identityFraud": 1,
+  "verification": 3
 }

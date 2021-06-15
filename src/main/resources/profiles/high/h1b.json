@@ -1,14 +1,14 @@
 {
-    "name": "H1B",
-    "description": "High confidence, 1 piece of evidence, profile B (H1B)",
-    "confidence": "High",
-    "evidenceScores": [
-        {
-            "strength": 3,
-            "validity": 3,
-            "activityHistory": 2,
-            "identityFraud": 1,
-            "verification": 3
-        }
-    ]
+  "name": "H1B",
+  "description": "High confidence, 1 piece of evidence, profile B (H1B)",
+  "confidence": "High",
+  "evidenceScores": [
+    {
+      "strength": 3,
+      "validity": 3
+    }
+  ],
+  "activityHistory": 2,
+  "identityFraud": 1,
+  "verification": 3
 }
