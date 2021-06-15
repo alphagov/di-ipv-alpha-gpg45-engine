@@ -31,30 +31,39 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
     public IdentityProfile matchEvidenceScoringToProfile(EvidenceScore[] evidenceScores) {
         var possibleMatches = new ArrayList<IdentityProfile>();
 
-        identityProfiles.forEach(identityProfile -> {
+        identityProfiles
+            .stream()
+            .takeWhile(_unused -> possibleMatches.size() != 1)
+            .forEach(identityProfile -> {
 
             if (identityProfile.getEvidenceScoreCriteria().length > evidenceScores.length) {
                 // skip due to lack of evidence provided.
                 return;
             }
 
+            // Compare the other 3 things to see if they match or not.
+
+            var matchedEvidences = new ArrayList<EvidenceScore>();
+
             Arrays.stream(evidenceScores).forEach(evidenceScore -> {
                 Arrays.stream(identityProfile.getEvidenceScoreCriteria()).forEach(criteria -> {
                     if (evidenceScore.getStrength().getScoreValue() >= criteria.getStrength().getScoreValue()
                         && evidenceScore.getValidity().getScoreValue() >= criteria.getValidity().getScoreValue()
-                        && !possibleMatches.contains(identityProfile)) {
-                        possibleMatches.add(identityProfile);
+                        && !matchedEvidences.contains(evidenceScore)) {
+                        matchedEvidences.add(evidenceScore);
                     }
                 });
             });
 
-            if (possibleMatches.size() >= identityProfile.getEvidenceScoreCriteria().length) {
-                possibleMatches
-                    .stream()
-                    .peek(x -> log.info("Possible profile: {}", x.getDescription()));
+            if (matchedEvidences.size() >= identityProfile.getEvidenceScoreCriteria().length) {
+                possibleMatches.add(identityProfile);
             }
         });
 
-        return null;
+        possibleMatches
+            .forEach(x -> log.info("Possible profile: {}", x.getDescription()));
+
+        // todo: add a check to see if null
+        return possibleMatches.get(0);
     }
 }
