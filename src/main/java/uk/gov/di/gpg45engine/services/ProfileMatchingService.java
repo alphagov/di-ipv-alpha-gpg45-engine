@@ -8,5 +8,5 @@ import java.util.Map;
 
 public interface ProfileMatchingService {
 
-    IdentityProfile matchEvidenceScoringToProfile(Map<IdentityEvidence, EvidenceScore> evidenceScoreBundle);
+    IdentityProfile matchEvidenceScoringToProfile(EvidenceScore[] evidenceScoreBundle);
 }

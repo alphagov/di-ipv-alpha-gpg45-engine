@@ -7,10 +7,13 @@ import lombok.Data;
 public class IdentityProfile {
     @SerializedName("name")
     private IdentityProfileIdentifier identityProfileIdentifier;
+
     @SerializedName("description")
     private String description;
+
     @SerializedName("confidence")
     private ConfidenceLevel levelOfConfidence;
+
     @SerializedName("evidenceScores")
     private EvidenceScore[] evidenceScoreCriteria;
 }

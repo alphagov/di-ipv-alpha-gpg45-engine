@@ -9,6 +9,8 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import uk.gov.di.gpg45engine.domain.gpg45.IdentityProfile;
 
 import java.io.*;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -38,6 +40,9 @@ public class EvidenceConfig {
                 identityProfileList.add(identityProfile);
             }
         }
+
+        identityProfileList.sort(Comparator.comparingInt(identityProfile -> identityProfile.getLevelOfConfidence().getValue()));
+        Collections.reverse(identityProfileList);
 
         return identityProfileList;
     }

@@ -32,7 +32,7 @@ public class Gpg45ServiceImpl implements Gpg45Service {
     public IdentityProfile calculate(IdentityVerificationBundle bundle) {
         var evidenceValidityScores = mapIdentityEvidenceToScore(bundle.getIdentityEvidence());
 
-        return profileMatchingService.matchEvidenceScoringToProfile(evidenceValidityScores);
+        return profileMatchingService.matchEvidenceScoringToProfile(evidenceValidityScores.values().toArray(new EvidenceScore[0]));
     }
 
     private Map<IdentityEvidence, EvidenceScore> mapIdentityEvidenceToScore(IdentityEvidence[] identityEvidence) {
