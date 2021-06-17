@@ -1,3 +1,29 @@
 logging:
   level:
     root: INFO
+
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+
+management:
+  endpoint:
+    health:
+      show-details: "always"
+      status:
+        http-mapping:
+          UP: 200
+          DOWN: 503
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: health
+
+
+spring:
+  application:
+    name: GPG45 Engine
+  main:
+    banner-mode: off

@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uk.gov.di.gpg45engine.domain.data.IdentityEvidence;
 import uk.gov.di.gpg45engine.domain.data.IdentityVerificationBundle;
+import uk.gov.di.gpg45engine.domain.dto.CalculateResponseDto;
 import uk.gov.di.gpg45engine.domain.gpg45.EvidenceScore;
-import uk.gov.di.gpg45engine.domain.gpg45.IdentityProfile;
 import uk.gov.di.gpg45engine.services.Gpg45Service;
 import uk.gov.di.gpg45engine.services.IdentityEvidenceService;
 import uk.gov.di.gpg45engine.services.ProfileMatchingService;
@@ -28,26 +28,26 @@ public class Gpg45ServiceImpl implements Gpg45Service {
     }
 
     @Override
-    public IdentityProfile calculate(IdentityVerificationBundle bundle) {
-        var evidenceValidityScores = mapIdentityEvidenceToScore(bundle.getIdentityEvidence());
+    public CalculateResponseDto calculate(IdentityVerificationBundle bundle) {
+        mapIdentityEvidenceToScore(bundle.getIdentityEvidence());
+        var identityProfile = profileMatchingService.matchEvidenceScoringToProfile(bundle.getIdentityEvidence());
 
-        return profileMatchingService.matchEvidenceScoringToProfile(evidenceValidityScores.values().toArray(new EvidenceScore[0]));
+        return new CalculateResponseDto(bundle, identityProfile);
     }
 
-    private Map<IdentityEvidence, EvidenceScore> mapIdentityEvidenceToScore(IdentityEvidence[] identityEvidence) {
-        var validityScoreMap = new HashMap<IdentityEvidence, EvidenceScore>();
+    private void mapIdentityEvidenceToScore(IdentityEvidence[] identityEvidence) {
         Arrays.stream(identityEvidence).forEach(evidence -> {
+
+            if (evidence.getEvidenceScore() != null) {
+                // if score is already provided skip scoring step, useful for playing about with values.
+                return;
+            }
+
             var strength = identityEvidenceService.getEvidenceStrength(evidence);
             var validity = identityEvidenceService.getEvidenceValidity(evidence);
+            var evidenceScore = new EvidenceScore(strength, validity);
 
-            var evidenceScore = EvidenceScore.builder()
-                .strength(strength)
-                .validity(validity)
-                .build();
-
-            validityScoreMap.put(evidence, evidenceScore);
+            evidence.setEvidenceScore(evidenceScore);
         });
-
-        return validityScoreMap;
     }
 }

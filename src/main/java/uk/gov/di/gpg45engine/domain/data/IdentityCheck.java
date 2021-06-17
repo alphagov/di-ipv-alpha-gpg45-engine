@@ -1,19 +1,12 @@
 package uk.gov.di.gpg45engine.domain.data;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum IdentityCheck {
 
-    @SerializedName("None")
     NONE("None"),
-
-    @SerializedName("PublishedPolicy")
     PUBLISHED_POLICY("PublishedPolicy"),
-
-    @SerializedName("AntiMoneyLaundering")
     ANTI_MONEY_LAUNDERING("AntiMoneyLaundering"),
-
-    @SerializedName("PhysicalBiometric")
     PHYSICAL_BIOMETRIC("PhysicalBiometric");
 
     private final String identityCheck;
@@ -22,6 +15,7 @@ public enum IdentityCheck {
         this.identityCheck = identityCheck;
     }
 
+    @JsonValue
     @Override
     public String toString() {
         return identityCheck;

@@ -35,9 +35,9 @@ public class GpgController {
 
     @PostMapping("/calculate")
     public Mono<ResponseEntity<CalculateResponseDto>> calculate(@RequestBody VerificationBundleDto bundle) {
-        var identityProfile = gpg45Service.calculate(bundle.getIdentityVerificationBundle());
+        var data = gpg45Service.calculate(bundle.getIdentityVerificationBundle());
         var response = ResponseEntity.ok()
-            .body(new CalculateResponseDto(identityProfile));
+            .body(data);
 
         return Mono.just(response);
     }

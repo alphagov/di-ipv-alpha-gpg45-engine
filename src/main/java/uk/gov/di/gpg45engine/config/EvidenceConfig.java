@@ -1,8 +1,8 @@
 package uk.gov.di.gpg45engine.config;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -18,15 +18,16 @@ import java.util.List;
 @Configuration
 public class EvidenceConfig {
 
-    private final Gson gson;
+    @Bean
+    ObjectMapper objectMapper() {
+        var objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
 
-    @Autowired
-    public EvidenceConfig() {
-        gson = new Gson();
+        return objectMapper;
     }
 
     @Bean("identity-profile-list")
-    public List<IdentityProfile> identityProfiles() throws IOException {
+    public List<IdentityProfile> identityProfiles(ObjectMapper objectMapper) throws IOException {
         var identityProfileList = new LinkedList<IdentityProfile>();
 
         var cl = this.getClass().getClassLoader();
@@ -36,7 +37,7 @@ public class EvidenceConfig {
         for (var resource : resources){
             var file = resource.getFile();
             try (var is = new FileInputStream(file); var isr = new InputStreamReader(is); var reader = new BufferedReader(isr)) {
-                var identityProfile = gson.fromJson(reader, IdentityProfile.class);
+                var identityProfile = objectMapper.readValue(reader, IdentityProfile.class);
                 identityProfileList.add(identityProfile);
             }
         }
