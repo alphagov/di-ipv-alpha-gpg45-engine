@@ -4,10 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Mono;
-import uk.gov.di.gpg45engine.domain.data.IdentityEvidence;
 import uk.gov.di.gpg45engine.domain.gpg45.EvidenceScore;
 import uk.gov.di.gpg45engine.domain.gpg45.IdentityProfile;
+import uk.gov.di.gpg45engine.matchers.ScoreMatcher;
 import uk.gov.di.gpg45engine.services.ProfileMatchingService;
 
 import java.util.ArrayList;
@@ -37,33 +36,42 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
             .forEach(identityProfile -> {
 
             if (identityProfile.getEvidenceScoreCriteria().length > evidenceScores.length) {
+                log.debug("Skipped profile (criteria requires more evidence than provided): {}", identityProfile.getDescription());
                 // skip due to lack of evidence provided.
                 return;
             }
 
             // Compare the other 3 things to see if they match or not.
 
+
             var matchedEvidences = new ArrayList<EvidenceScore>();
 
-            Arrays.stream(evidenceScores).forEach(evidenceScore -> {
+            log.debug("Comparing current profile: {}", identityProfile.getDescription());
+
+            Arrays.stream(evidenceScores).forEach(evidenceScore ->
                 Arrays.stream(identityProfile.getEvidenceScoreCriteria()).forEach(criteria -> {
-                    if (evidenceScore.getStrength().getScoreValue() >= criteria.getStrength().getScoreValue()
-                        && evidenceScore.getValidity().getScoreValue() >= criteria.getValidity().getScoreValue()
-                        && !matchedEvidences.contains(evidenceScore)) {
+                    if (ScoreMatcher.equalsOrGreater(evidenceScore.getStrength(), criteria.getStrength())
+                    && ScoreMatcher.equalsOrGreater(evidenceScore.getValidity(), criteria.getValidity())
+                    && !matchedEvidences.contains(evidenceScore)) {
+                        log.debug("Matched a piece of evidence from profile {}: ", identityProfile.getDescription());
                         matchedEvidences.add(evidenceScore);
                     }
-                });
-            });
+            }));
 
             if (matchedEvidences.size() >= identityProfile.getEvidenceScoreCriteria().length) {
                 possibleMatches.add(identityProfile);
             }
         });
 
-        possibleMatches
-            .forEach(x -> log.info("Possible profile: {}", x.getDescription()));
+        if (possibleMatches.size() == 0) {
+            log.warn("Couldn't match a profile to provided evidence.");
+            return null;
+        }
 
-        // todo: add a check to see if null
-        return possibleMatches.get(0);
+        // Get the first match (which is the highest profile as profiles are ordered).
+        var possibleProfileMatch = possibleMatches.get(0);
+
+        log.info("Possible profile matched: {}", possibleProfileMatch.getDescription());
+        return possibleProfileMatch;
     }
 }
