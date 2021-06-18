@@ -1,0 +1,18 @@
+{
+  "name": "V2D",
+  "description": "Very high confidence, 2 pieces of evidence, profile D (V2D)",
+  "confidence": "VeryHigh",
+  "evidenceScores": [
+    {
+      "strength": 4,
+      "validity": 4
+    },
+    {
+      "strength": 4,
+      "validity": 4
+    }
+  ],
+  "activityHistory": 0,
+  "identityFraud": 0,
+  "verification": 3
+}

@@ -1,0 +1,14 @@
+{
+  "name": "L1C",
+  "description": "Low confidence, 1 piece of evidence, profile C (L1C)",
+  "confidence": "Low",
+  "evidenceScores": [
+    {
+      "strength": 1,
+      "validity": 1
+    }
+  ],
+  "activityHistory": 3,
+  "identityFraud": 2,
+  "verification": 2
+}

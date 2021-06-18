@@ -1,0 +1,22 @@
+{
+  "name": "M3A",
+  "description": "Medium confidence, 3 pieces of evidence, profile A (M3A)",
+  "confidence": "Medium",
+  "evidenceScores": [
+    {
+      "strength": 2,
+      "validity": 2
+    },
+    {
+      "strength": 2,
+      "validity": 2
+    },
+    {
+      "strength": 2,
+      "validity": 2
+    }
+  ],
+  "activityHistory": 2,
+  "identityFraud": 2,
+  "verification": 2
+}

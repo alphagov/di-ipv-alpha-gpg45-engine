@@ -1,0 +1,14 @@
+{
+  "name": "V1D",
+  "description": "Very high confidence, 1 piece of evidence, profile D (V1D)",
+  "confidence": "VeryHigh",
+  "evidenceScores": [
+    {
+      "strength": 4,
+      "validity": 4
+    }
+  ],
+  "activityHistory": 0,
+  "identityFraud": 0,
+  "verification": 4
+}
