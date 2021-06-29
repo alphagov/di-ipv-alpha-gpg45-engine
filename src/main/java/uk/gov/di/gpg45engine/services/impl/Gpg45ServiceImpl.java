@@ -10,7 +10,7 @@ import uk.gov.di.gpg45engine.services.Gpg45Service;
 import uk.gov.di.gpg45engine.services.IdentityEvidenceService;
 import uk.gov.di.gpg45engine.services.ProfileMatchingService;
 
-import java.util.*;
+import java.util.Arrays;
 
 @Service
 public class Gpg45ServiceImpl implements Gpg45Service {
@@ -29,14 +29,17 @@ public class Gpg45ServiceImpl implements Gpg45Service {
 
     @Override
     public CalculateResponseDto calculate(IdentityVerificationBundle bundle) {
-        mapIdentityEvidenceToScore(bundle.getIdentityEvidence());
-        var identityProfile = profileMatchingService.matchEvidenceScoringToProfile(bundle.getIdentityEvidence());
+        var scoredEvidence = mapIdentityEvidenceToScore(bundle.getIdentityEvidence());
+
+        bundle.setIdentityEvidence(scoredEvidence);
+        var identityProfile = profileMatchingService.matchBundleToProfile(bundle);
 
         return new CalculateResponseDto(bundle, identityProfile);
     }
 
-    private void mapIdentityEvidenceToScore(IdentityEvidence[] identityEvidence) {
-        Arrays.stream(identityEvidence).forEach(evidence -> {
+    private IdentityEvidence[] mapIdentityEvidenceToScore(IdentityEvidence[] identityEvidence) {
+        var evidenceBundle = identityEvidence.clone();
+        Arrays.stream(evidenceBundle).forEach(evidence -> {
 
             if (evidence.getEvidenceScore() != null) {
                 // if score is already provided skip scoring step, useful for playing about with values.
@@ -49,5 +52,7 @@ public class Gpg45ServiceImpl implements Gpg45Service {
 
             evidence.setEvidenceScore(evidenceScore);
         });
+
+        return evidenceBundle;
     }
 }

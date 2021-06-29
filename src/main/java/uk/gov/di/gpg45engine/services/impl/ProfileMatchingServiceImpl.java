@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import uk.gov.di.gpg45engine.domain.data.IdentityEvidence;
+import uk.gov.di.gpg45engine.domain.data.IdentityVerificationBundle;
 import uk.gov.di.gpg45engine.domain.gpg45.EvidenceScore;
 import uk.gov.di.gpg45engine.domain.gpg45.IdentityProfile;
 import uk.gov.di.gpg45engine.matchers.ScoreMatcher;
@@ -29,9 +30,11 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
     }
 
     @Override
-    public IdentityProfile matchEvidenceScoringToProfile(IdentityEvidence[] evidenceBundle) {
+    public IdentityProfile matchBundleToProfile(IdentityVerificationBundle bundle) {
         var possibleMatches = new ArrayList<IdentityProfile>();
 
+        var bundleScores = bundle.getBundleScores();
+        var evidenceBundle = bundle.getIdentityEvidence();
         var evidenceScores = Arrays.stream(evidenceBundle)
             .map(IdentityEvidence::getEvidenceScore)
             .collect(Collectors.toList());
@@ -48,7 +51,16 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
                 }
 
                 // Compare the other 3 things to see if they match or not.
-
+                if (ScoreMatcher.greater(identityProfile.getActivityHistory(), bundleScores.getActivityCheckScore())
+                && ScoreMatcher.greater(identityProfile.getIdentityFraud(), bundleScores.getFraudCheckScore())
+                && ScoreMatcher.greater(identityProfile.getVerification(), bundleScores.getIdentityVerificationScore())) {
+                    // skip the identity profile as we don't match the other 3 scores
+                    log.debug(
+                        "Skipped profile (activity history, identity fraud, verification is lower than required): {}",
+                        identityProfile.getDescription()
+                    );
+                    return;
+                }
 
                 var matchedEvidences = new ArrayList<EvidenceScore>();
                 var matchedCriteria = new ArrayList<EvidenceScore>();
