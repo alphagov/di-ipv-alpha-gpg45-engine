@@ -8,4 +8,5 @@ public class IdentityVerificationBundle {
     private ActivityCheck[] activityChecks;
     private FraudCheck fraudCheck;
     private IdentityVerification identityVerification;
+    private BundleScores bundleScores;
 }

@@ -33,6 +33,7 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
     public IdentityProfile matchBundleToProfile(IdentityVerificationBundle bundle) {
         var possibleMatches = new ArrayList<IdentityProfile>();
 
+        var bundleScores = bundle.getBundleScores();
         var evidenceBundle = bundle.getIdentityEvidence();
         var evidenceScores = Arrays.stream(evidenceBundle)
             .map(IdentityEvidence::getEvidenceScore)
@@ -50,8 +51,12 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
                 }
 
                 // Compare the other 3 things to see if they match or not.
-//                if (ScoreMatcher.equalsOrGreater(evidenceBundle))
-
+                if (ScoreMatcher.greater(identityProfile.getActivityHistory(), bundleScores.getActivityCheckScore())
+                && ScoreMatcher.greater(identityProfile.getIdentityFraud(), bundleScores.getFraudCheckScore())
+                && ScoreMatcher.greater(identityProfile.getVerification(), bundleScores.getIdentityVerificationScore())) {
+                    // skip the identity profile as we don't match the other 3 scores
+                    return;
+                }
 
                 var matchedEvidences = new ArrayList<EvidenceScore>();
                 var matchedCriteria = new ArrayList<EvidenceScore>();

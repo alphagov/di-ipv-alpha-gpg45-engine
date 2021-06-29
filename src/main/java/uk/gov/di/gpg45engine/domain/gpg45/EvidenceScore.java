@@ -1,7 +1,6 @@
 package uk.gov.di.gpg45engine.domain.gpg45;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

@@ -10,7 +10,7 @@ import uk.gov.di.gpg45engine.services.Gpg45Service;
 import uk.gov.di.gpg45engine.services.IdentityEvidenceService;
 import uk.gov.di.gpg45engine.services.ProfileMatchingService;
 
-import java.util.*;
+import java.util.Arrays;
 
 @Service
 public class Gpg45ServiceImpl implements Gpg45Service {
