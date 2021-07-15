@@ -38,6 +38,11 @@ public class IdentityEvidenceServiceImpl implements IdentityEvidenceService {
     @Override
     public Score getEvidenceValidity(IdentityEvidence identityEvidence) {
         var score = Score.NOT_AVAILABLE;
+
+        if (identityEvidence.getValidityChecks() == null) {
+            return Score.NOT_AVAILABLE;
+        }
+
         var authoritativeSource = identityEvidence.getValidityChecks().getAuthoritativeSource();
 
         if (approvedAuthoritativeSources.contains(authoritativeSource)) {
