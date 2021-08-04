@@ -9,6 +9,6 @@ public class ScoreMatcher {
     }
 
     public static boolean greater(Score score, Score score2) {
-        return score.getScoreValue() >= score2.getScoreValue();
+        return score.getScoreValue() > score2.getScoreValue();
     }
 }
