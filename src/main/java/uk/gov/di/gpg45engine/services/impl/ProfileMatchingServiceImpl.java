@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import uk.gov.di.gpg45engine.domain.data.BundleScores;
 import uk.gov.di.gpg45engine.domain.data.IdentityEvidence;
 import uk.gov.di.gpg45engine.domain.data.IdentityVerificationBundle;
 import uk.gov.di.gpg45engine.domain.gpg45.EvidenceScore;
@@ -96,30 +95,5 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
 
         log.info("Possible profile matched: {}", possibleProfileMatch.getDescription());
         return possibleProfileMatch;
-    }
-
-    private boolean matchBundleScores(IdentityProfile identityProfile, BundleScores bundleScores) {
-        boolean match = false;
-        boolean activityHistoryMatch = false;
-        boolean identityFraudMatch = false;
-        boolean verificationMatch = false;
-
-        if (ScoreMatcher.equalsOrGreater(bundleScores.getActivityCheckScore(), identityProfile.getActivityHistory())) {
-            activityHistoryMatch = true;
-        }
-
-        if (ScoreMatcher.equalsOrGreater(bundleScores.getFraudCheckScore(), identityProfile.getIdentityFraud())) {
-            identityFraudMatch = true;
-        }
-
-        if (ScoreMatcher.equalsOrGreater(bundleScores.getIdentityVerificationScore(), identityProfile.getVerification())) {
-            verificationMatch = true;
-        }
-
-        match = (activityHistoryMatch && identityFraudMatch && verificationMatch)
-            || (activityHistoryMatch && identityFraudMatch)
-            || (identityFraudMatch && verificationMatch);
-
-        return true;
     }
 }
