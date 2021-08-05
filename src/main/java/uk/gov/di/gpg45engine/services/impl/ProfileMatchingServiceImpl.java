@@ -52,9 +52,8 @@ public class ProfileMatchingServiceImpl implements ProfileMatchingService {
 
                 // Compare the other 3 things to see if they match or not.
                 if (ScoreMatcher.greater(identityProfile.getActivityHistory(), bundleScores.getActivityCheckScore())
-                && ScoreMatcher.greater(identityProfile.getIdentityFraud(), bundleScores.getFraudCheckScore())
-                && ScoreMatcher.greater(identityProfile.getVerification(), bundleScores.getIdentityVerificationScore())) {
-                    // skip the identity profile as we don't match the other 3 scores
+                    || ScoreMatcher.greater(identityProfile.getIdentityFraud(), bundleScores.getFraudCheckScore())
+                    || ScoreMatcher.greater(identityProfile.getVerification(), bundleScores.getIdentityVerificationScore())) {
                     log.debug(
                         "Skipped profile (activity history, identity fraud, verification is lower than required): {}",
                         identityProfile.getDescription()
