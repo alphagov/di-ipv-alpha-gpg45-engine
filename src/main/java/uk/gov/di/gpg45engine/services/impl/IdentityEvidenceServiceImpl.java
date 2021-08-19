@@ -30,6 +30,9 @@ public class IdentityEvidenceServiceImpl implements IdentityEvidenceService {
             case ATP_GENERIC_DATA:
                 score = Score.ONE;
                 break;
+            case DRIVING_LICENCE:
+                score = Score.TWO;
+                break;
         }
 
         return score;
