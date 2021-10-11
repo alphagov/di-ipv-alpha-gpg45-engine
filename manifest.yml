@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: di-ipv-gpg-45-engine
+  - name: di-ipv-alpha-gpg-45-engine
     path: build/libs/gpg-45-engine-0.0.1-SNAPSHOT.jar
     memory: 256M
     buildpack: java_buildpack
